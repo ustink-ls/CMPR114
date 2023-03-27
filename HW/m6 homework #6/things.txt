@@ -1,0 +1,3 @@
+The name of an animal is cat.
+The name of a fruit is apple.
+The name of a country is Kenya.
