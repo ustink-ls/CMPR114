@@ -1,0 +1,6 @@
+Here are your total expenses for last month:
+Rent: 2000 
+Gas: 100 
+Food: 150 
+Clothing: 100 
+Car Payment: 0 
