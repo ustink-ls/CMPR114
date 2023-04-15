@@ -1,0 +1,6 @@
+dog
+87
+english
+cat
+766
+spanish

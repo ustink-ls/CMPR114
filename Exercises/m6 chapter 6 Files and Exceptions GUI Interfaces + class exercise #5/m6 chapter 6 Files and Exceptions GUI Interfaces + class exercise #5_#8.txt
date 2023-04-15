@@ -1,0 +1,11 @@
+Here is the list of random numbers written into the file:
+10
+10
+8
+4
+9
+3
+5
+7
+4
+6

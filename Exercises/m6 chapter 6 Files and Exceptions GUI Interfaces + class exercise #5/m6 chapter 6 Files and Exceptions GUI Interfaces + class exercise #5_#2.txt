@@ -1,0 +1,10 @@
+The 1st number is 34
+The 2nd number is 6
+The 3rd number is 7
+The avg number is 15.666666666666666
+The total number is 47
+The 1st number is 34
+The 2nd number is 56
+The 3rd number is 78
+The avg number is 56.0
+The total number is 168
