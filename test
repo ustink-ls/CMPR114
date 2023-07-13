@@ -1,0 +1,48 @@
+import PyPDF2
+from openpyxl import Workbook
+
+def extract_billing_accounts(pdf_path):
+    with open(pdf_path, 'rb') as pdf_file:
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        text = ''
+        for page in pdf_reader.pages:
+            text += page.extract_text()
+        
+        # Find the section containing "Billing account(s):"
+        billing_start = text.find("Billing account(s):")
+        if billing_start == -1:
+            return []  # Return an empty list if the section is not found
+        
+        # Extract the numbers following the section
+        billing_section = text[billing_start:]
+        numbers = []
+        for word in billing_section.split():
+            if word.isdigit():
+                numbers.append(word)
+        
+        return numbers
+
+# Specify the path to your PDF file
+pdf_path = '/Users/leslyesirena/Desktop/Python/Hello World.pdf'
+
+# Call the function to extract the billing account numbers from the PDF
+billing_accounts = extract_billing_accounts(pdf_path)
+
+# Create a new Excel workbook and select the active sheet
+workbook = Workbook()
+sheet = workbook.active
+
+# Write the billing account numbers to the Excel sheet
+for i, account in enumerate(billing_accounts, start=1):
+    sheet.cell(row=i, column=1, value=account)
+
+# Save the workbook to an Excel file
+excel_file_path = '/Users/leslyesirena/Desktop/Python/Hello World.xlsx'
+workbook.save(excel_file_path)
+
+# Print the billing account numbers in the terminal.
+for account in billing_accounts:
+    print(account)
+
+# Print a message indicating the Excel file has been saved
+print(f"Billing account numbers have been saved to: {excel_file_path}")
